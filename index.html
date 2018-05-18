@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/QAPage" lang="ru-RU">
+<head itemscope itemtype="http://schema.org/WebSite">
+    <title itemprop='name'>html5 - &lt;meta charset = &quot;utf-8&quot; &gt; vs &lt;meta http-equiv = &quot;Content-Type&quot; &gt; - Qaru</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link href="https://qaru.site" itemprop="url">
+    <script type="application/javascript" src="/js/ads.js"></script>
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="yandex-verification" content="68f8c2202f8948e2" />
+    <meta name="csrf-param" content="csrf">
+    <meta name="csrf-token" content="ZE8P6sHuaR_5ibQJQx9765Zt9NGmJL1LmGhUnS1cu-EqEEuyg90DR5_r50gkKhOh9B-jucIU8zLiOgPEfy6O0w==">
+    <meta name="description" content="Чтобы определить кодировку для   HTML5 Doctype, какую нотацию использовать?
+
+ Short:
+
+&amp;lt;meta charset=&quot;utf-8&quot; /&amp;gt; 
+
+ Long
+
+&amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&amp;gt;
+
+">
+<link href="http://qaru.site/questions/862/meta-charset-utf-8-vs-meta-http-equiv-content-type" rel="canonical">
+<link href="/assets/all-7c954250eb0f0773bdc773833b601d36.css" rel="stylesheet">    <script>
+    function getXmlHttp(){
+        var xmlhttp;
+        try {
+            xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            try {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (E) {
+                xmlhttp = false;
+            }
+        }
+        if (!xmlhttp && typeof XMLHttpRequest !== 'undefined') {
+            xmlhttp = new XMLHttpRequest();
+        }
+        return xmlhttp;
+    }
+
+    var xhr = getXmlHttp(),
+        csrfValue = document.getElementsByName("csrf-token")[0].content,
+        r = document.referrer;
+
+    if (xhr) {
+        xhr.open("POST", "/er34kfJefw", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader('X-CSRF-Token', csrfValue);
+        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr.responseText);
+            }
+        };
+
+        xhr.send("t=h&r="+encodeURIComponent(r));
+    }
+</script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter44607970 = new Ya.Metrika2({ id:44607970, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/44607970" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <!-- Google Analytics counter -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-99598005-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- /Google Analytics counter -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9882502965778689",
+            enable_page_level_ads: true
+        });
+    </script>
+    <script>
+        window.__gcse = {
+            callback: function() {
+                $('#___gcse_0 .gsc-clear-button').remove();
+                $('#___gcse_0 .gsc-search-button').remove();
+                $('#___gcse_0 .gsib_b').remove();
+                $('#___gcse_0 .gsc-input input').attr('placeholder', 'Поиск...');
+            }
+        };
+        (function() {
+            var cx = '011151660133384015389:9fypgkndwsa';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+        })();
+    </script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrap">
+    <nav id="w0" class="navbar-default navbar-static-top navbar"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w0-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img class="dark" src="/img/logo-dark.svg" /><div class="name">stack<span class="cl-orange">.io</span></div></a></div><div id="w0-collapse" class="collapse navbar-collapse"><ul id="w1" class="navbar-nav navbar-right nav"><li><a href="/">Главная</a></li>
+<li class="active"><a href="/questions">Вопросы</a></li>
+<li><a href="/tags">Теги</a></li></ul>    <div class="search">
+        <gcse:searchbox-only resultsUrl="/search" filter="0" sort_by=""></gcse:searchbox-only>
+    </div>
+    </div></div></nav>    <div class="container">
+        <div itemscope itemtype="http://schema.org/Question">
+    <div class="right-col">
+        <div class="hidden-xs hidden-sm sidebar">
+                            <div class="awrap" style="max-width: 300px;margin-bottom: 5px;">
+                    <ins class="adsbygoogle"
+                         style="width:300px;height:600px;"
+                         data-ad-client="ca-pub-9882502965778689"
+                         data-ad-slot="1447358630">
+                    </ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <ins class="adsbygoogle bottom"
+                         style="width:300px;height:600px;margin-top:20px;margin-bottom: 5px;"
+                         data-ad-client="ca-pub-9882502965778689"
+                         data-ad-slot="4939757378"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                <script type="text/javascript">
+                    document.addEventListener('DOMContentLoaded', function(){
+                        var awrap = $('.awrap'),
+                            lastScrollTop = 0,
+                            wh = $(window).height();
+
+                        $(window).on('scroll', function () {
+                            var st = $(this).scrollTop(),
+                                ot = awrap.offset().top,
+                                h = awrap.height(),
+                                dh = $(document).height();
+
+                            if (st < 40) {
+                                awrap.css({position : 'initial'});
+                            } else {
+                                if (h > wh && $('.bottom *').length > 0) {
+                                    if (st > lastScrollTop
+                                        && (st + wh) >= h + ot + 5
+                                    ) {
+                                        if ((st + wh) <= dh - 126) {
+                                            awrap.css({position: 'fixed'});
+                                            awrap.css({bottom: 0});
+                                            awrap.css({top: 'initial'});
+                                        } else {
+                                            awrap.css({position : 'absolute'});
+                                            awrap.css({top : dh - h - 131});
+                                            awrap.css({bottom: 'initial'});
+                                        }
+                                    } else if (st < lastScrollTop && st <= ot-20) {
+                                        awrap.css({position: 'fixed'});
+                                        awrap.css({top: 20});
+                                        awrap.css({bottom: 'initial'});
+                                    } else if (awrap.css('position') !== 'absolute' && awrap.css('position') !== 'initial' && awrap.css('position') !== 'static') {
+                                        awrap.css({position : 'absolute'});
+                                        awrap.css({top : ot});
+                                        awrap.css({bottom: 'initial'});
+                                    }
+                                } else {
+                                    awrap.css({position: 'fixed'});
+                                    awrap.css({top: 20});
+                                    awrap.css({bottom: 'initial'});
+                                }
+                            }
+                            lastScrollTop = st;
+                        });
+                    });
+                </script>
+                    </div>
+    </div>
+    <div class="main-col">
+        <div class="question-header">
+            <h1 itemprop="name">&lt;meta charset = &quot;utf-8&quot; &gt; vs &lt;meta http-equiv = &quot;Content-Type&quot; &gt;</h1>
+        </div>
+        <div class="question">
+            <div class="question-row">
+                <div class="question-text">
+                    <div class="description" itemprop="text">
+                        <p>Чтобы определить кодировку для  <strong> HTML5 Doctype</strong>, какую нотацию использовать?</p>
+<!-- Yandex.RTB R-A-248011-8 -->
+<div id="yandex_rtb_R-A-248011-8" style="margin-left: -10px; margin-bottom: 10px;"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-248011-8",
+                renderTo: "yandex_rtb_R-A-248011-8",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+
+<ul><li> <p>Short:</p>
+
+<pre class="prettyprint-override"><code>&lt;meta charset="utf-8" /&gt; 
+</code></pre></li>
+<li> <p>Long</p>
+
+<pre class="prettyprint-override"><code>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+</code></pre></li>
+</ul>                    </div>
+                    <div class="votes-question">
+                        <div class="vote-count" itemprop="upvoteCount">1311</div><i class="fa fa-thumbs-o-up"></i>
+                    </div>
+                    <div class="tags">
+                                                    <a href="/questions/tagged/html5" class="tag" title="показать вопросы с меткой 'html5'" rel="tag">html5</a>
+                                                    <a href="/questions/tagged/doctype" class="tag" title="показать вопросы с меткой 'doctype'" rel="tag">doctype</a>
+                                                    <a href="/questions/tagged/meta-tags" class="tag" title="показать вопросы с меткой 'meta-tags'" rel="tag">meta-tags</a>
+                                            </div>
+                    <div class="clearfix"></div>
+                    <div class="action-time">
+                                                задан <a href="https://stackoverflow.com/users/367985/curiousmind" rel="noopener" target="_blank">CuriousMind</a>                        <span title="1295042807"> 15 янв. &#39;11 в  1:06</span>
+                    </div>
+                    <a class="a-link" href="https://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type" target="_blank" rel="noopener">источник</a>
+                    <a class="s-link" href="/questions/862/meta-charset-utf-8-vs-meta-http-equiv-content-type" title="поделиться">поделиться</a>
+                </div>
+            </div>
+        </div>
+        <div class="answers" id="answers">
+            <div class="answers-header">
+                <h2 class="pull-left"><span itemprop="answerCount">7</span> ответов</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="answer-pager hidden">
+                            </div>
+                                        <div class="answer accepted" id="13622" itemscope itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+                    <div class="answer-row">
+                        <div class="answer-text">
+                            <div class="description" itemprop="text">
+                                <p>В HTML5 они эквивалентны. Используйте более короткую, ее легче запомнить и напечатать. <a href="http://code.google.com/p/doctype-mirror/wiki/MetaCharsetAttribute" rel="nofollow noreferrer">Поддержка браузера в порядке</a>, поскольку она была разработана для обратной совместимости.</p>
+<div id="yandex_rtb_R-A-248011-3" style="margin-bottom:10px;"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-248011-3",
+                renderTo: "yandex_rtb_R-A-248011-3",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>                            </div>
+                            <div class="votes-answer accepted">
+                                <div class="vote-count" itemprop="upvoteCount">923</div><i class="fa fa-thumbs-o-up"></i>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="action-time">
+                                                                ответ дан <a href="https://stackoverflow.com/users/19068/quentin" rel="noopener" target="_blank">Quentin</a>                                <span title="1295042986"> 15 янв. &#39;11 в  1:09</span>
+                            </div>
+                                                            <a class="a-link" href="https://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type/4696517#4696517" target="_blank" rel="noopener">источник</a>
+                                                        <a class="s-link" href="/questions/862/meta-charset-utf-8-vs-meta-http-equiv-content-type/13622#13622" title="поделиться">поделиться</a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="answer" id="13626" itemscope itemtype="http://schema.org/Answer" >
+                    <div class="answer-row">
+                        <div class="answer-text">
+                            <div class="description" itemprop="text">
+                                <p>Обе формы объявления <a href="http://www.w3schools.com/tags/att_meta_charset.asp" rel="nofollow noreferrer">meta charset</a> эквивалентны и должны работать одинаково в браузерах. Но есть несколько вещей, которые необходимо запомнить, когда объявления ваших веб файлов обозначаются как UTF-8:</p>
+
+<ul><li> Сохраните ваши файлы в кодировке UTF-8 без <a href="http://www.w3.org/International/questions/qa-byte-order-mark" rel="nofollow noreferrer">байтового байта</a> (BOM).</li>
+<li> Объявите кодировку в ваших HTML файлах, используя <a href="http://www.w3schools.com/tags/att_meta_charset.asp" rel="nofollow noreferrer">мета-кодировку</a> (например, выше).</li>
+<li> Ваш веб-сервер должен обслуживать ваши файлы, объявляя кодировку UTF-8 в HTTP-заголовке Content-Type.</li>
+</ul><p>Серверы Apache настроены на обслуживание файлов по ISO-8859-1 по умолчанию, поэтому вам нужно добавить следующую строку в ваш файл  <code>.htaccess</code>:</p><!-- Yandex.RTB R-A-248011-4 -->
+<div id="yandex_rtb_R-A-248011-4" style="margin-bottom: 10px;"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-248011-4",
+                renderTo: "yandex_rtb_R-A-248011-4",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+
+<pre class="prettyprint-override"><code>AddDefaultCharset UTF-8
+</code></pre>
+
+<p>Это приведет к тому, что Apache будет обслуживать ваши файлы, объявляющие кодировку UTF-8 в заголовке ответа Content-Type, но ваши файлы должны быть сохранены в UTF-8 (без спецификации) для начала.</p>
+
+<p>Блокнот не может сохранять ваши файлы в UTF-8 без спецификации. Бесплатный редактор, который может <a href="http://notepad-plus-plus.org/" rel="nofollow noreferrer">Notepad ++</a>. В строке меню программы выберите "Кодирование &gt; Кодировка в UTF-8 без спецификации". Вы также можете открывать файлы и повторно сохранять их в UTF-8, используя "Кодирование &gt; Преобразовать в UTF-8 без спецификации".</p>
+
+<p>Подробнее о <a href="http://en.wikipedia.org/wiki/Byte_order_mark" rel="nofollow noreferrer">Знак байтового заказа (BOM) в Википедии</a>.</p>                            </div>
+                            <div class="votes-answer green">
+                                <div class="vote-count" itemprop="upvoteCount">228</div><i class="fa fa-thumbs-o-up"></i>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="action-time">
+                                                                ответ дан <a href="https://stackoverflow.com/users/763755/codeboy" rel="noopener" target="_blank">CodeBoy</a>                                <span title="1305962774"> 21 мая &#39;11 в  10:26</span>
+                            </div>
+                                                            <a class="a-link" href="https://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type/6080299#6080299" target="_blank" rel="noopener">источник</a>
+                                                        <a class="s-link" href="/questions/862/meta-charset-utf-8-vs-meta-http-equiv-content-type/13626#13626" title="поделиться">поделиться</a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="answer" id="13627" itemscope itemtype="http://schema.org/Answer" >
+                    <div class="answer-row">
+                        <div class="answer-text">
+                            <div class="description" itemprop="text">
+                                <p>Еще одна причина, по которой нужно пойти с коротким, состоит в том, что она соответствует другим экземплярам, ​​где вы можете указать набор символов в разметке. Например:</p>
+
+<pre class="prettyprint-override"><code>&lt;script type="javascript" charset="UTF-8" src="/script.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;a charset="UTF-8" href="http://example.com/"&gt;Example Site&lt;/a&gt;&lt;/p&gt;
+</code></pre>
+
+<p>Консистенция помогает уменьшить ошибки и сделать код более читаемым.</p>
+
+<p>Обратите внимание, что атрибут charset не учитывает регистр. Вы можете использовать UTF-8 или utf-8, однако UTF-8 более четкий, читаемый и более точный.</p>
+
+<p>Кроме того, нет абсолютно никакой причины использовать любое значение, отличное от UTF-8, в атрибуте мета-charset или заголовке страницы. UTF-8 является кодировкой по умолчанию для веб-документов с HTML4 в 1999 году и единственным практическим способом создания современных веб-страниц.</p>
+
+<p>Также вы не должны использовать HTML-объекты в UTF-8. Символы, подобные символу авторского права, должны быть напечатаны напрямую. Единственными сущностями, которые вы должны использовать, являются 5 зарезервированных символов разметки: меньше, больше, амперсанд, простой, двойной премьер. Сущностям нужен парсер HTML, который вы не всегда можете использовать в будущем, они вносят ошибки, делают ваш код менее читаемым, увеличивают размеры вашего файла и иногда неправильно декодируют в разных браузерах в зависимости от того, какие объекты вы использовали. Узнайте, как вводить/вставлять авторские права, торговую марку, открытую цитату, закрывать цитату, апостроф, em dash, en dash, bullet, Euro и любые другие символы, с которыми вы сталкиваетесь в своем контенте, и использовать эти фактические символы в своем коде. У Mac есть средство просмотра символов, которое вы можете включить в настройке системы клавиатуры, и вы можете найти, а затем перетащить нужные символы или использовать соответствующий инструмент просмотра клавиатуры, чтобы узнать, какие ключи нужно вводить. Например, товарный знак - Option + 2. UTF-8 содержит все символы и символы на каждом письменном человеческом языке. Поэтому нет никакого оправдания для использования - вместо em emash. Неплохая идея также изучить правила пунктуации и типографики... например, зная, что период проходит внутри закрытой цитаты, а не снаружи.</p>
+
+<blockquote> <p>Использование тега для чего-то типа контента и кодировки иронично, поскольку, не зная этих вещей, вы не могли разобрать файл для получения значения метатега.</p>
+</blockquote>
+
+<p>Нет, это не так. Браузер начинает синтаксический анализ файла в качестве кодировки по умолчанию браузера: UTF-8 или ISO-8859-1. Поскольку US-ASCII является подмножеством как ISO-8859-1, так и UTF-8, браузер может отлично читать в любом случае... это то же самое. Когда браузер встречает тег мета-кодировки, если кодировка отличается от того, что браузер уже использует, браузер перезагружает страницу в указанной кодировке. Вот почему мы помещаем мета-чарт-тег вверху, сразу после заголовка, перед чем-либо еще, даже заголовком. Таким образом, вы можете использовать символы UTF-8 в своем названии.</p>
+
+<blockquote> <p>Вы должны сохранить свой файл в кодировке UTF-8 без спецификации</p>
+</blockquote>
+
+<p>Это не совсем так. Если в документе есть только символы US-ASCII, вы можете сохранить его как US-ASCII и использовать его как UTF-8, потому что это подмножество. Но если есть символы Unicode, вы правы, вы должны сохранить как UTF-8 без спецификации.</p>
+
+<blockquote> <p>Если вам нужен хороший текстовый редактор, который сохранит ваши файлы в UTF-8 я рекомендую Notepad ++.</p>
+</blockquote>
+
+<p>На Mac используйте Bare Bones TextWrangler (бесплатно) из Mac App Store или Bare Bones BBEdit, который находится в Mac App Store за 39,99 $... очень дешево для такого отличного инструмента. В любом приложении есть меню в нижней части окна документа, где вы указываете кодировку документа, и вы можете легко выбрать "UTF-8 no BOM". И, конечно, вы можете установить это как значение по умолчанию для новых документов в настройках.</p>
+
+<blockquote> <p>Но если ваш веб-сервер обслуживает кодировку в HTTP-заголовке, который рекомендуется, оба [метатеги] бесполезны.</p>
+</blockquote>
+
+<p>Это неверно. Конечно, вы должны установить кодировку в HTTP-заголовке, но вы также должны установить ее в атрибуте мета-charset, чтобы страница могла быть сохранена пользователем, из браузера на локальное хранилище, а затем снова открыта позже, и в этом случае единственным признаком кодирования, которое будет присутствовать, является атрибут мета-кодировки. Вы также должны установить базовый тег по той же причине... на сервере базовый тег не нужен, но при открытии из локального хранилища базовый тег позволяет странице работать так, как если бы она была на сервере, при этом все активы на месте и т.д., не сломанные ссылки.</p>
+
+<blockquote> <p>AddDefaultCharset UTF-8</p>
+</blockquote>
+
+<p>Или вы можете просто изменить кодировку определенных типов файлов следующим образом:</p> <pre class="prettyprint-override"><code>AddType text/html;charset=utf-8 html
+</code></pre>
+
+<p>Совет для обслуживания файлов UTF-8 и Latin-1 (ISO-8859-1) должен предоставить UTF-8 файлам текстовое расширение и латинские файлы "txt." </p>
+
+<pre class="prettyprint-override"><code>AddType text/plain;charset=iso-8859-1 txt
+AddType text/plain;charset=utf-8 text
+</code></pre>
+
+<p>Наконец, рассмотрите вопрос о сохранении ваших документов с окончанием строки Unix, а не в устаревших версиях DOS или (классической) линии Mac, которые не помогают и могут повредить, особенно по линии, поскольку мы все больше и больше получаем от этих устаревших систем. HTML-документ с допустимой кодировкой HTML5, UTF-8 и окончанием строки Unix - это хорошо выполненная работа. Вы можете делиться и редактировать, хранить, читать и восстанавливать и полагаться на этот документ во многих контекстах. Это lingua franca. Это цифровая бумага.</p>                            </div>
+                            <div class="votes-answer green">
+                                <div class="vote-count" itemprop="upvoteCount">77</div><i class="fa fa-thumbs-o-up"></i>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="action-time">
+                                                                ответ дан <a href="https://stackoverflow.com/users/904059/simon-white" rel="noopener" target="_blank">Simon White</a>                                <span title="1313872006"> 20 авг. &#39;11 в  23:26</span>
+                            </div>
+                                                            <a class="a-link" href="https://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type/7134485#7134485" target="_blank" rel="noopener">источник</a>
+                                                        <a class="s-link" href="/questions/862/meta-charset-utf-8-vs-meta-http-equiv-content-type/13627#13627" title="поделиться">поделиться</a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="answer" id="13628" itemscope itemtype="http://schema.org/Answer" >
+                    <div class="answer-row">
+                        <div class="answer-text">
+                            <div class="description" itemprop="text">
+                                <p> <strong> <code>&lt;meta charset="utf-8"&gt;</code> был введен с/для HTML5.</strong></p>
+
+<p>Как указано в документации, оба действительны. Тем не менее,  <code>&lt;meta charset="utf-8"&gt;</code> предназначен только для HTML5 (и проще ввести/запомнить).</p>
+
+<p> <strong> В свое время старый стиль неизбежно станет устаревшим</strong> в ближайшем будущем. Я буду придерживаться нового  <code>&lt;meta charset="utf-8"&gt;</code>. <br /><br /><strong> Там только один путь, но вверх. В техническом случае это поэтапное прекращение старого (действительно, ДЕЙСТВИТЕЛЬНО быстрого)</strong></p>
+
+<p> <strong> Документация:</strong> <a href="https://www.w3schools.com/tags/att_meta_charset.asp" rel="nofollow noreferrer">HTML-мета-кодировка Attribute-W3Schools</a></p>                            </div>
+                            <div class="votes-answer green">
+                                <div class="vote-count" itemprop="upvoteCount">23</div><i class="fa fa-thumbs-o-up"></i>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="action-time">
+                                                                ответ дан <a href="https://stackoverflow.com/users/931377/omar" rel="noopener" target="_blank">Omar</a>                                <span title="1403730250"> 26 июня &#39;14 в  0:04</span>
+                            </div>
+                                                            <a class="a-link" href="https://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type/24418532#24418532" target="_blank" rel="noopener">источник</a>
+                                                        <a class="s-link" href="/questions/862/meta-charset-utf-8-vs-meta-http-equiv-content-type/13628#13628" title="поделиться">поделиться</a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="answer" id="13630" itemscope itemtype="http://schema.org/Answer" >
+                    <div class="answer-row">
+                        <div class="answer-text">
+                            <div class="description" itemprop="text">
+                                <p>Не оспаривая другие ответы, я думаю, что заслуживает упоминания следующее.</p>
+
+<ul><li> "длинная" (<code>http-equiv</code>) нотация и "короткая" равны, в зависимости от того, что наступит первым:</li>
+<li> Заголовки веб-серверов будут перекрывать все теги  <code>&lt;meta&gt;</code>;</li>
+<li> BOM (отметка байтового байта) переопределит все, и во многих случаях это повлияет на html 4 (и, возможно, на другие вещи тоже);</li>
+<li> Если вы не объявляете какую-либо кодировку, вы, вероятно, получите текст в "резервной текстовой кодировке", которая определяется вашим браузером. Ни в Firefox, ни в Chrome это utf-8;</li>
+<li> В отсутствие других подсказок браузер попытается прочитать ваш документ, как если бы он был в ASCII, чтобы получить кодировку, поэтому вы не можете использовать какие-либо странные кодировки (хотя utf-16 с BOM должен делать);</li>
+<li> В то время как в спецификациях утверждается, что объявление кодирования должно быть в пределах первых 512 байт документа, большинство браузеров попытаются прочитать больше, чем это.</li>
+</ul><p>Вы можете протестировать, запустив  <code>echo 'HTTP/1.1 200 OK\r\nContent-type: text/html; charset=windows-1251\r\n\r\n\xef\xbb\xbf&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;&lt;meta charset="windows-1251"&gt;&lt;title&gt;привет&lt;/title&gt;&lt;/head&gt;&lt;body&gt;привет&lt;/body&gt;&lt;/html&gt;' | nc -lp 4500</code> и указав браузер на <code>localhost:4500</code>. (Конечно, вы захотите изменить или удалить части. Часть спецификации <code>\xef\xbb\xbf</code>. Будьте осторожны с кодировкой вашей оболочки.)</p>
+
+<p>Помните, что очень важно, чтобы вы явно объявляли кодировку. Разрешение браузерам может привести к проблемам безопасности.</p>                            </div>
+                            <div class="votes-answer green">
+                                <div class="vote-count" itemprop="upvoteCount">16</div><i class="fa fa-thumbs-o-up"></i>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="action-time">
+                                                                ответ дан <a href="https://stackoverflow.com/users/1449683/squirrel" rel="noopener" target="_blank">squirrel</a>                                <span title="1452816230"> 15 янв. &#39;16 в  3:03</span>
+                            </div>
+                                                            <a class="a-link" href="https://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type/34802103#34802103" target="_blank" rel="noopener">источник</a>
+                                                        <a class="s-link" href="/questions/862/meta-charset-utf-8-vs-meta-http-equiv-content-type/13630#13630" title="поделиться">поделиться</a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="answer" id="13629" itemscope itemtype="http://schema.org/Answer" >
+                    <div class="answer-row">
+                        <div class="answer-text">
+                            <div class="description" itemprop="text">
+                                <p>Используйте <code>&lt;meta charset="utf-8" /&gt;</code> для веб-браузеров при использовании HTML5.</p>
+
+<p>Используйте <code>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;</code> при использовании HTML4 или XHTML или для устаревших парсеров dom, например DOMDocument в php</p>                            </div>
+                            <div class="votes-answer green">
+                                <div class="vote-count" itemprop="upvoteCount">5</div><i class="fa fa-thumbs-o-up"></i>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="action-time">
+                                                                ответ дан <a href="https://stackoverflow.com/users/175071/timo-huovinen" rel="noopener" target="_blank">Timo Huovinen</a>                                <span title="1448525311"> 26 нояб. &#39;15 в  11:08</span>
+                            </div>
+                                                            <a class="a-link" href="https://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type/33933395#33933395" target="_blank" rel="noopener">источник</a>
+                                                        <a class="s-link" href="/questions/862/meta-charset-utf-8-vs-meta-http-equiv-content-type/13629#13629" title="поделиться">поделиться</a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="answer last" id="168279" itemscope itemtype="http://schema.org/Answer" >
+                    <div class="answer-row">
+                        <div class="answer-text">
+                            <div class="description" itemprop="text">
+                                <p>Есть новости, основанные на <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/meta" rel="nofollow noreferrer">Mozilla Foundation</a> и <a href="https://www.sitepoint.com/meta-tags-html-basics-best-practices/" rel="nofollow noreferrer">sitepoint</a></p>
+
+<blockquote> <p>Не используйте это значение (<code>http-equiv=content-type</code>), поскольку оно устарело. Предпочитайте атрибут  <code>charset</code> в элементе &lt; <code>meta</code> &gt; .</p>
+</blockquote>                            </div>
+                            <div class="votes-answer">
+                                <div class="vote-count" itemprop="upvoteCount">0</div><i class="fa fa-thumbs-o-up fa-rotate-270"></i>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="action-time">
+                                                                ответ дан <a href="https://stackoverflow.com/users/7386695/user10089632" rel="noopener" target="_blank">user10089632</a>                                <span title="1502839350"> 16 авг. &#39;17 в  2:22</span>
+                            </div>
+                                                            <a class="a-link" href="https://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type/45702929#45702929" target="_blank" rel="noopener">источник</a>
+                                                        <a class="s-link" href="/questions/862/meta-charset-utf-8-vs-meta-http-equiv-content-type/168279#168279" title="поделиться">поделиться</a>
+                        </div>
+                    </div>
+                </div>
+                        <!-- Основной / Десктоп / 1 / Футер -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:728px;height:450px"
+                 data-ad-client="ca-pub-9882502965778689"
+                 data-ad-slot="7331906402">
+            </ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <div class="answer-pager hidden">
+                            </div>
+            <!-- Yandex.RTB R-A-248011-7 -->
+            <div id="yandex_rtb_R-A-248011-7" style="margin-left: -10px;"></div>
+            <script type="text/javascript">
+                (function(w, d, n, s, t) {
+                    w[n] = w[n] || [];
+                    w[n].push(function() {
+                        Ya.Context.AdvManager.render({
+                            blockId: "R-A-248011-7",
+                            renderTo: "yandex_rtb_R-A-248011-7",
+                            async: true
+                        });
+                    });
+                    t = d.getElementsByTagName("script")[0];
+                    s = d.createElement("script");
+                    s.type = "text/javascript";
+                    s.src = "//an.yandex.ru/system/context.js";
+                    s.async = true;
+                    t.parentNode.insertBefore(s, t);
+                })(this, this.document, "yandexContextAsyncCallbacks");
+            </script>
+        </div>
+        <div class="bottom-notice">
+            <p>Другие вопросы по меткам                                    <a href="/questions/tagged/html5" class="tag" title="показать вопросы с меткой 'html5'" rel="tag">html5</a>
+                                    <a href="/questions/tagged/doctype" class="tag" title="показать вопросы с меткой 'doctype'" rel="tag">doctype</a>
+                                    <a href="/questions/tagged/meta-tags" class="tag" title="показать вопросы с меткой 'meta-tags'" rel="tag">meta-tags</a>
+                            </p>
+        </div>
+    </div>
+</div>    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="pull-left">
+            <div class="license">
+                licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="nofollow license">cc by-sa 3.0</a>
+                with attribution.
+            </div>
+        </div>
+        <div class="pull-right logo">
+            <a href="#">
+                <img src="/img/logo-dark.svg">
+                <div class="name">stack<span class="cl-orange">.io</span></div>
+            </a>
+        </div>
+    </div>
+</footer>
+<script src="/assets/all-2662c62bab5c8bae8273581af7f9ce0d.js"></script></body>
+</html>
